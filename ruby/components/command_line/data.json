@@ -1,0 +1,12 @@
+{
+  "namespaces": [
+
+  ],
+  "base_command_name": "BaseCommand",
+  "base_command_type": "Dry::CLI::Command",
+  "full_namespace": [
+    "MacDiff",
+    "CLI",
+    "Commands"
+  ]
+}
