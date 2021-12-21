@@ -16,7 +16,7 @@ end
 # builder.debug
 # builder.add_file('david')
 
-KManager.model do
+KManager.action do
   def on_action
     puts '-' * 70
     director = DryCmdlineDirector

@@ -2,6 +2,8 @@
 
 include KLog::Logging
 
+CONFIG_KEY = :webslides
+
 log.kv 'working folder', Dir.pwd
 
 Handlebars::Helpers.configure do |config|
@@ -13,10 +15,10 @@ Handlebars::Helpers.configure do |config|
 end
 
 def builder
-  @builder ||= KBuilder::BaseBuilder.init(KBuilder.configuration(:documentation))
+  @builder ||= KBuilder::BaseBuilder.init(KBuilder.configuration(CONFIG_KEY))
 end
 
-KBuilder.configure(:documentation) do |config|
+KBuilder.configure(CONFIG_KEY) do |config|
   global_template = File.expand_path('~/dev/kgems/k_templates/templates')
   config.target_folders.add(:app, File.expand_path('../', Dir.pwd))
   config.template_folders.add(:global_template, global_template)
@@ -24,9 +26,9 @@ KBuilder.configure(:documentation) do |config|
 end
 # KBuilder.configuration.debug
 
-area = KManager.add_area(:documentation)
+area = KManager.add_area(CONFIG_KEY)
 resource_manager = area.resource_manager
 resource_manager.add_resource_expand_path('run.rb')
-resource_manager.add_resource_expand_path('howto_director.rb')
+resource_manager.add_resource_expand_path('webslide_director.rb')
 
 KManager.fire_actions(:load_content, :register_document, :load_document)

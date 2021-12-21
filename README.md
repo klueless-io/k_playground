@@ -1,13 +1,26 @@
 # k_playground
 
-## Ruby
+# HTML Presentation
+
+Build HTML presentations
+
+## Web Slides
+
+[Web Slides](https://github.com/webslides/webslides) presentations framework
+
+# Ruby
 
 Generate Ruby Code
 
-### Ruby Components
+## Ruby Components
 
-Generate Ruby Code - Components
+Ruby Code - Components
 
-#### Command Line
+### Command Line
 
-Generate Command Line Component using dry-rb
+Build command Line components that use dry-rb
+
+### Options Builder
+
+Build OptionBuilders that help with flow control in complex code generation environments
+
