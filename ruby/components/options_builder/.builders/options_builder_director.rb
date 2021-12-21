@@ -1,3 +1,4 @@
+puts 'sean'
 class OptionsBuilderDirector
   class << self
     def init
