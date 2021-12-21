@@ -1,13 +1,13 @@
 puts 'run'
 
-KManager.action :run do
+KManager.action :run_sean do
   def on_action
 
     director = WebSlideDirector.init
       .title('WebSlides: Making HTML presentations easy')
       .direction(:horizontal)
-      .slides do
-      end
+      # .slides do
+      # end
       # .logit
 
     builder
