@@ -24,6 +24,7 @@ KBuilder.configure(CONFIG_KEY) do |config|
   config.template_folders.add(:global_template, global_template)
   config.template_folders.add(:app_template, File.expand_path('.templates', Dir.pwd))
 end
+
 KBuilder.configuration(CONFIG_KEY).debug
 
 area = KManager.add_area(CONFIG_KEY)
