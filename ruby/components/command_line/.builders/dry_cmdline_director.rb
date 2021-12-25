@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Build CMD line classes that work with dry-cli
 class DryCmdlineDirector
   include KLog::Logging
 

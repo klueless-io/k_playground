@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Howto director will update README.md
 class HowtoDirector
   include KLog::Logging
 
