@@ -21,15 +21,17 @@ end
 KBuilder.configure(CONFIG_KEY) do |config|
   global_template = File.expand_path('~/dev/kgems/k_templates/templates')
   config.target_folders.add(:app, File.expand_path('../', Dir.pwd))
-  config.template_folders.add(:global_template, global_template)
-  config.template_folders.add(:app_template, File.expand_path('.templates', Dir.pwd))
+  config.template_folders.add(:global_template, global_template, 'ruby/components/builder_options')
+  # config.template_folders.add(:app_template, File.expand_path('.templates', Dir.pwd))
 end
 
 KBuilder.configuration(CONFIG_KEY).debug
 
 area = KManager.add_area(CONFIG_KEY)
 resource_manager = area.resource_manager
-resource_manager.add_resource_expand_path('run.rb')
-resource_manager.add_resource_expand_path('options_builder_director.rb')
+resource_manager
+  .fileset
+  .glob('*.rb', exclude: ['boot.rb'])
+resource_manager.add_resources
 
 KManager.fire_actions(:load_content, :register_document, :load_document)

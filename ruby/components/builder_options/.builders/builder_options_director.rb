@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Options for code generation, dynamically isolate areas for generation
-class OptionsBuilderDirector
+class BuilderOptionsDirector
   class << self
     def init
       new
