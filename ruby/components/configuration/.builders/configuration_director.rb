@@ -86,6 +86,30 @@ class ConfigurationDirector
     builder.add_file(file, opts)
   end
 
+  def sample
+    <<-RUBY
+KManager.action do
+  def on_action
+    puts '-' * 70
+    director = ConfigurationDirector
+      .init(builder)
+      .style(:named)
+      .name('Test Director')
+      .main_namespace('Main', 'Sub')
+      .add_config_key(:some_key, "''")
+      .add_config_key(:some_other_key, "'xmen'")
+      .logit
+
+    # dom = director.dom
+    # data = director.data
+
+    director.add_attach_configuration
+    director.add_configuration
+  end
+end
+        RUBY
+  end
+
   class << self
     def init(builder)
       new(builder)
