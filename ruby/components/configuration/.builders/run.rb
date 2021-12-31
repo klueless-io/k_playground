@@ -4,7 +4,7 @@ KManager.action do
   def on_action
     puts '-' * 70
     director = ConfigurationDirector
-      .init(builder)
+      .init(builder, on_exist: :write)
       .style(:named)
       .name('Test Director')
       .main_namespace('Main', 'Sub')
