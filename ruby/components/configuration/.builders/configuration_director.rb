@@ -118,7 +118,7 @@ end
 
   class << self
     def init(builder, **opts)
-      new(builder, opts)
+      new(builder, **opts)
     end
   end
 
