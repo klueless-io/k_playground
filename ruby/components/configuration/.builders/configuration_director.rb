@@ -53,6 +53,9 @@ class ConfigurationDirector
 
   def logit
     log.structure(dom)
+    log.subheading('SAMPLE')
+    puts sample
+    log.line
 
     self
   end
