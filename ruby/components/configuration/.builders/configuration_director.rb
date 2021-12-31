@@ -6,9 +6,11 @@ class ConfigurationDirector
 
   attr_reader :builder
   attr_reader :dom
+  attr_reader :on_exist
 
-  def initialize(builder)
+  def initialize(builder, on_exist: :write)
     @builder = builder
+    @on_exist = on_exist
     @dom = {
       name: '',
       style: :simple,
@@ -71,7 +73,7 @@ class ConfigurationDirector
   def add_attach_configuration(file = 'attach_configuration.rb', **opts)
     opts = opts.merge(
       dom: dom,
-      on_exist: :write,
+      on_exist: on_exist,
       template_file: "ruby/components/configuration/attach_#{dom[:style]}_configuration.rb")
 
     builder.add_file(file, opts)
@@ -80,7 +82,7 @@ class ConfigurationDirector
   def add_configuration(file = 'configuration.rb', **opts)
     opts = opts.merge(
       dom: dom,
-      on_exist: :write,
+      on_exist: on_exist,
       template_file: "ruby/components/configuration/configuration.rb")
 
     builder.add_file(file, opts)
@@ -115,8 +117,8 @@ end
   end
 
   class << self
-    def init(builder)
-      new(builder)
+    def init(builder, **opts)
+      new(builder, opts)
     end
   end
 
