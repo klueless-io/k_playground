@@ -53,9 +53,6 @@ class ConfigurationDirector
 
   def logit
     log.structure(dom)
-    log.subheading('SAMPLE')
-    puts sample
-    log.line
 
     self
   end
@@ -90,7 +87,7 @@ class ConfigurationDirector
   end
 
   def sample
-    <<-RUBY
+    sample = <<-RUBY
 KManager.action do
   def on_action
     puts '-' * 70
@@ -111,6 +108,10 @@ KManager.action do
   end
 end
         RUBY
+
+    log.subheading('SAMPLE')
+    puts sample
+    log.line
   end
 
   class << self
