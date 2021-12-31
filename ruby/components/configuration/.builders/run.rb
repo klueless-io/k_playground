@@ -1,5 +1,4 @@
 # Run
-
 KManager.action do
   def on_action
     puts '-' * 70
@@ -17,6 +16,7 @@ KManager.action do
 
     director.add_attach_configuration
     director.add_configuration
+    director.sample
   end
 end
 

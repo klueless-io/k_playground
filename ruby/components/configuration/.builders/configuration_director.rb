@@ -76,7 +76,7 @@ class ConfigurationDirector
       on_exist: on_exist,
       template_file: "ruby/components/configuration/attach_#{dom[:style]}_configuration.rb")
 
-    builder.add_file(file, opts)
+    builder.add_file(file, **opts)
   end
 
   def add_configuration(file = 'configuration.rb', **opts)
@@ -85,11 +85,31 @@ class ConfigurationDirector
       on_exist: on_exist,
       template_file: "ruby/components/configuration/configuration.rb")
 
-    builder.add_file(file, opts)
+    builder.add_file(file, **opts)
   end
 
   def sample
-    sample = <<-RUBY
+    log.subheading('SAMPLE')
+    puts sample_action
+    log.line
+
+    self
+  end
+
+  class << self
+    def init(builder, **opts)
+      new(builder, **opts)
+    end
+  end
+
+  private
+
+  def dirty?
+    @dirty
+  end
+
+  def sample_action
+    <<-RUBY
 KManager.action do
   def on_action
     puts '-' * 70
@@ -110,21 +130,6 @@ KManager.action do
   end
 end
         RUBY
-
-    log.subheading('SAMPLE')
-    puts sample
-    log.line
   end
 
-  class << self
-    def init(builder, **opts)
-      new(builder, **opts)
-    end
-  end
-
-  private
-
-  def dirty?
-    @dirty
-  end
 end
