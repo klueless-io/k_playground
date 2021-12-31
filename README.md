@@ -20,6 +20,10 @@ Ruby Code - Components
 
 Build command Line components that use dry-rb
 
+### Configuration
+
+Build configuration components
+
 ### Builder Options
 
 Build BuilderOptions that provide flow control in complex code generation environments

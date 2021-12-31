@@ -8,7 +8,7 @@ KManager.action :run do
 
     builder
       .add_file('builder_options.rb',
-                template_file: 'builder_options.rb',
+                template_file: 'ruby/components/builder_options/builder_options.rb',
                 dom: director.dom,
                 on_exist: :write)
   end

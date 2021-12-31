@@ -9,6 +9,7 @@ KManager.action :run do
       .h1('Ruby'                , 'Generate Ruby Code')
       .h2('Ruby Components'     , 'Ruby Code - Components')
       .h3('Command Line'        , 'Build command Line components that use dry-rb')
+      .h3('Configuration'       , 'Build configuration components')
       .h3('Builder Options'     , 'Build BuilderOptions that provide flow control in complex code generation environments')
       .h2('Ruby Design Pattern' , 'Build design patterns using Ruby')
       .h3('Composite'           , 'Composite is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects.')

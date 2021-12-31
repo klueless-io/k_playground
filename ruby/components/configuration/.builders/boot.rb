@@ -2,7 +2,7 @@
 
 include KLog::Logging
 
-CONFIG_KEY = :options_builder
+CONFIG_KEY = :configuration
 
 log.kv 'working folder', Dir.pwd
 
@@ -22,7 +22,7 @@ KBuilder.configure(CONFIG_KEY) do |config|
   global_template = File.expand_path('~/dev/kgems/k_templates/templates')
   config.target_folders.add(:app, File.expand_path('../', Dir.pwd))
   config.template_folders.add(:global_template, global_template)
-  # config.template_folders.add(:app_template, File.expand_path('.templates', Dir.pwd))
+  config.template_folders.add(:app_template, File.expand_path('.templates', Dir.pwd))
 end
 
 KBuilder.configuration(CONFIG_KEY).debug
