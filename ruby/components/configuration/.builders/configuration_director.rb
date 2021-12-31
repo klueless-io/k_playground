@@ -73,6 +73,7 @@ class ConfigurationDirector
   def add_attach_configuration(file = 'attach_configuration.rb', **opts)
     opts = opts.merge(
       dom: dom,
+      cop: true,
       on_exist: on_exist,
       template_file: "ruby/components/configuration/attach_#{dom[:style]}_configuration.rb")
 
@@ -82,6 +83,7 @@ class ConfigurationDirector
   def add_configuration(file = 'configuration.rb', **opts)
     opts = opts.merge(
       dom: dom,
+      cop: true,
       on_exist: on_exist,
       template_file: "ruby/components/configuration/configuration.rb")
 
@@ -122,8 +124,7 @@ KManager.action do
       .add_config_key(:some_other_key, "'xmen'")
       .logit
 
-    # dom = director.dom
-    # data = director.data
+    director.sample
 
     director.add_attach_configuration
     director.add_configuration

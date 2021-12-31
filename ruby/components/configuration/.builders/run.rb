@@ -9,14 +9,14 @@ KManager.action do
       .main_namespace('Main', 'Sub')
       .add_config_key(:some_key, "''")
       .add_config_key(:some_other_key, "'xmen'")
-      .logit
+      # .logit
 
+    # director.sample
     # dom = director.dom
     # data = director.data
 
     director.add_attach_configuration
     director.add_configuration
-    director.sample
   end
 end
 
