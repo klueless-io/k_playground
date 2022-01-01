@@ -75,7 +75,7 @@ class ConfigurationDirector
       dom: dom,
       cop: true,
       on_exist: on_exist,
-      template_file: "ruby/components/configuration/#{dom[:style]}_configuration.rb")
+      template_file: "ruby/components/configuration/#{dom[:style]}_config.rb")
 
     builder.add_file(file, **opts)
   end
