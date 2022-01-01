@@ -70,12 +70,12 @@ class ConfigurationDirector
     builder.add_file(file, **opts.merge(dom: dom, on_exist: :write))
   end
 
-  def add_attach_configuration(file = 'attach_configuration.rb', **opts)
+  def add_config(file = 'config.rb', **opts)
     opts = opts.merge(
       dom: dom,
       cop: true,
       on_exist: on_exist,
-      template_file: "ruby/components/configuration/attach_#{dom[:style]}_configuration.rb")
+      template_file: "ruby/components/configuration/#{dom[:style]}_configuration.rb")
 
     builder.add_file(file, **opts)
   end
@@ -126,7 +126,7 @@ KManager.action do
 
     director.sample
 
-    director.add_attach_configuration
+    director.add_config
     director.add_configuration
   end
 end
