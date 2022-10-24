@@ -12,10 +12,10 @@ module KManager
     module Commands
       extend Dry::CLI::Registry
 
-      register 'version'    , Version     , aliases: %w[v -v --version]
-      register 'watch'      , Watch       , aliases: %w[w]
-      register 'new'        , New         , aliases: %w[n]
-      register 'info'       , Info        , aliases: %w[i]
+      register 'version', Version, aliases: %w[v -v --version]
+      register 'watch', Watch, aliases: %w[w]
+      register 'new', New, aliases: %w[n]
+      register 'info', Info, aliases: %w[i]
 
       # register 'generate', aliases: ['g'] do |prefix|
       #   prefix.register 'config', Generate::Configuration

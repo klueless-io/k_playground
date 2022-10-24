@@ -2,7 +2,7 @@
 
 include KLog::Logging
 
-CONFIG_KEY = :configuration
+CONFIG_KEY = :composite
 
 log.kv 'working folder', Dir.pwd
 

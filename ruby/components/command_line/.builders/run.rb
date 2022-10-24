@@ -1,6 +1,6 @@
 # Run
 
-# KBuilder.configuration(:cli).debug
+# KConfig.configuration(:cli).debug
 
 # KManager.model :david do
 #   settings do
@@ -9,7 +9,7 @@
 # end
 
 def builder
-  @builder ||= KBuilder::BaseBuilder.init(KBuilder.configuration(:cli))
+  @builder ||= KBuilder::BaseBuilder.init(KConfig.configuration(:cli))
 end
 
 # KManager.dashboard
@@ -30,7 +30,7 @@ KManager.action do
     builder
       .add_file('data.json', content: JSON.pretty_generate(dom), on_exist: :write)
 
-    # KBuilder.configuration(:cli).debug
+    # KConfig.configuration(:cli).debug
 
     builder
       .add_file('base_command.rb',

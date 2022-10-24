@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # BuilderOptions is an object that you configure and alter as needed for dynamic code generation
 #
 # # How to use
@@ -16,12 +18,12 @@ class BuilderOptions
   end
 
   def debug(active, a1: 0, b1: 0, c1: 0, aaa: '', xxx: '', abc: '', xyz: '')
-    active = active == true || active == 1
+    active = [true, 1].include?(active)
 
     # Flags
-    a1 = active && (a1 == true || a1 == 1)
-    b1 = active && (b1 == true || b1 == 1)
-    c1 = active && (c1 == true || c1 == 1)
+    a1 = active && [true, 1].include?(a1)
+    b1 = active && [true, 1].include?(b1)
+    c1 = active && [true, 1].include?(c1)
 
     @debug = {
       active: active,
@@ -42,13 +44,13 @@ class BuilderOptions
   end
 
   def more(active, the: 0, quick: 0, brown: 0, fox: 0, abc: '', xyz: '', a1: '', a2: '', a3: '')
-    active = active == true || active == 1
+    active = [true, 1].include?(active)
 
     # Flags
-    the = active && (the == true || the == 1)
-    quick = active && (quick == true || quick == 1)
-    brown = active && (brown == true || brown == 1)
-    fox = active && (fox == true || fox == 1)
+    the = active && [true, 1].include?(the)
+    quick = active && [true, 1].include?(quick)
+    brown = active && [true, 1].include?(brown)
+    fox = active && [true, 1].include?(fox)
 
     @more = {
       active: active,
